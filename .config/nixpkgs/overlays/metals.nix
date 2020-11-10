@@ -3,7 +3,7 @@ self: super:
   metals-emacs =
     let
       baseName = "metals-emacs";
-      version = "0.9.4";
+      version = "0.9.5";
       deps = with super; stdenv.mkDerivation {
         name = "${baseName}-deps-${version}";
         buildCommand = ''
