@@ -4,25 +4,31 @@
 
 !/.config
 /.config/*
-# Fish shell configuration files
-!/.config/fish
+
+# Nix configuration files
+!/.config/nix
+
 # Nixpkgs configuration files
 !/.config/nixpkgs
+
+# Fish shell configuration files
+!/.config/fish
 
 # Oh my zsh! configuration files
 !.zprofile
 !.zshenv
 !.zshrc
 
-# Ammonite Predef:
-# - https://github.com/com-lihaoyi/Ammonite/blob/master/internals-docs/predef.md
+# Ammonite
 !/.ammonite
 /.ammonite/*
+# Ammonite Predef:
+# - https://github.com/com-lihaoyi/Ammonite/blob/master/internals-docs/predef.md
 !/.ammonite/predef.sc
 
 # Emacs configuration files
 !.emacs.d
 
 # Obins Anne Pro 2 configuration files
-!darwin-annepro2-layout.json
 !darwin.itermkeymap
+!darwin-annepro2-layout.json
