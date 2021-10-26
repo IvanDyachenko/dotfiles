@@ -3,7 +3,7 @@ self: super:
   metals =
     let
       baseName = "metals";
-      version  = "0.10.7";
+      version  = "0.10.8";
 
       deps = with super; stdenv.mkDerivation {
         name = "${baseName}-deps-${version}";
@@ -18,7 +18,7 @@ self: super:
         '';
        outputHashMode = "recursive";
        outputHashAlgo = "sha256";
-       outputHash     = "0sk4vwpy06smn0k7035bdz0g2y98l8hxmn4v3gijsqaxvnya36x9";
+       outputHash     = "11skbg0is1g5i97z6cc4i0qr2wgyj02w7dbv8b04qc4qyqvpwcn5";
       };
     in
       with super; stdenv.mkDerivation rec {
