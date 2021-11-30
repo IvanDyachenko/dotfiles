@@ -26,6 +26,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          base: master
           title: Update flake inputs
           branch: update/flake-inputs
           branch-suffix: short-commit-hash
