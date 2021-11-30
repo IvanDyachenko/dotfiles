@@ -20,19 +20,8 @@ jobs:
           install_url: https://github.com/numtide/nix-unstable-installer/releases/download/${{ env.NIX_VERSION }}/install
           extra_nix_config: |
             experimental-features = nix-command flakes
-      - name: Prepare 'update/flake-inputs' branch
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git checkout -B update/flake-inputs
-      - name: Update and commit lockfile
+      - name: Recreate and commit changes to the flake's lock file
         run: nix flake update --commit-lock-file .config
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          branch: flakebot
-          force: true
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
