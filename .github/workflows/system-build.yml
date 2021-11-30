@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.nix'
   pull_request:
     branches:
       - master
+    paths:
+      - '**.nix'
 jobs:
   build:
     strategy:
