@@ -14,11 +14,6 @@
 # Fish shell configuration files
 !/.config/fish
 
-# Oh my zsh! configuration files
-!.zprofile
-!.zshenv
-!.zshrc
-
 # Ammonite
 !/.ammonite
 /.ammonite/*
