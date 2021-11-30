@@ -26,7 +26,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git checkout -B update/flake-inputs
       - name: Update and commit lockfile
-        run: nix flake update --recreate-lock-file --commit-lock-file .config
+        run: nix flake update --commit-lock-file .config
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
