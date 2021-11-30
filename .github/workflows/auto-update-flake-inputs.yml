@@ -1,0 +1,45 @@
+name: Automatically update flake inputs
+
+on:
+  schedule:
+    interval: "daily"
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: cachix/install-nix-action@v16
+        env:
+          NIX_VERSION: nix-2.5pre20211026_5667822
+        with:
+          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/${{ env.NIX_VERSION }}/install
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: Prepare 'update/flake-inputs' branch
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git checkout -B update/flake-inputs
+      - name: Update and commit lockfile
+        run: nix flake update --recreate-lock-file --commit-lock-file .config
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          branch: flakebot
+          force: true
+      - name: pull-request-action
+        uses: vsoch/pull-request-action@1.0.18
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          PULL_REQUEST_TITLE: 'Update flake inputs'
+          PULL_REQUEST_BRANCH: 'master'
+          PULL_REQUEST_FROM_BRANCH: 'update/flake-inputs'
+          PASS_ON_ERROR: true
+          PASS_IF_EXISTS: true
+          MAINTAINER_CANT_MODIFY: true
