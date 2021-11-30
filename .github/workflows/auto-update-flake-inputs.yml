@@ -33,13 +33,13 @@ jobs:
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           branch: flakebot
           force: true
-      - name: pull-request-action
-        uses: vsoch/pull-request-action@1.0.18
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          PULL_REQUEST_TITLE: 'Update flake inputs'
-          PULL_REQUEST_BRANCH: 'master'
-          PULL_REQUEST_FROM_BRANCH: 'update/flake-inputs'
-          PASS_ON_ERROR: true
-          PASS_IF_EXISTS: true
-          MAINTAINER_CANT_MODIFY: true
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          title: Update flake inputs
+          branch: update/flake-inputs
+          branch-suffix: short-commit-hash
+          delete-branch: true
+          assignees: IvanDyachenko
+          reviewers: IvanDyachenko
