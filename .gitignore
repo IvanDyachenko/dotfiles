@@ -14,16 +14,5 @@
 # Fish shell configuration files
 !/.config/fish
 
-# Ammonite
-!/.ammonite
-/.ammonite/*
-# Ammonite Predef:
-# - https://github.com/com-lihaoyi/Ammonite/blob/master/internals-docs/predef.md
-!/.ammonite/predef.sc
-
 # Emacs configuration files
 !.emacs.d
-
-# Obins Anne Pro 2 configuration files
-!darwin.itermkeymap
-!darwin-annepro2-layout.json
