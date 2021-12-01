@@ -25,7 +25,6 @@
   nixpkgs.overlays = [
     (import ./overlays/emacs.nix)
     (import ./overlays/metals.nix)
-    (import ./overlays/scala-cli.nix)
   ];
 
   users.users.ivandyachenko = {
