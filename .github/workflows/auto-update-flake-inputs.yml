@@ -26,6 +26,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           base: master
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           title: Update flake inputs
           branch: update/flake-inputs
           branch-suffix: short-commit-hash
