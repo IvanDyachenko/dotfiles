@@ -27,6 +27,8 @@
     scala-cli # Scala CLI is an experimental tool to run/compile/test Scala that aims at being a better scala command.
   ];
 
-  programs.emacs.enable = true;
-  programs.emacs.package = pkgs.emacsGit;
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsGcc;
+  };
 }

@@ -22,10 +22,8 @@
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (import ./overlays/emacs.nix)
-    (import ./overlays/metals.nix)
-  ];
+  nixpkgs.overlays =
+    [ (import ./overlays/emacs.nix) (import ./overlays/metals.nix) ];
 
   users.users.ivandyachenko = {
     name = "Ivan";
