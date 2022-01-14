@@ -2,14 +2,14 @@
 self: super: {
   metals = let
     baseName = "metals";
-    version = "0.10.9";
+    version = "0.11.0";
 
     deps = with super;
       stdenv.mkDerivation {
         name = "${baseName}-deps-${version}";
         buildCommand = ''
           export COURSIER_CACHE=$(pwd)
-          ${coursier}/bin/coursier fetch org.scalameta:metals_2.12:${version} \
+          ${coursier}/bin/cs fetch org.scalameta:metals_2.12:${version} \
             -r sonatype:snapshots \
             -r "bintray:scalacenter/releases" \
             > deps
@@ -18,7 +18,7 @@ self: super: {
         '';
         outputHashMode = "recursive";
         outputHashAlgo = "sha256";
-        outputHash = "1990afd9kdycf6qabah488pwsfx9ml44zr33lq3rngy5is12fk37";
+        outputHash = "sha256-sxm4xh4INXz1wtgVkuJ9sJG2k+9OC4ck6wFJjhD37XY=";
       };
   in with super;
   stdenv.mkDerivation rec {
