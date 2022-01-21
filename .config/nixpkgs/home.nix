@@ -25,6 +25,7 @@
     treefmt # One CLI to format the code tree.
     metals # Scala language server with rich IDE features.
     scala-cli # Scala CLI is an experimental tool to run/compile/test Scala that aims at being a better scala command.
+    plantuml # PlantUML is an open-source tool allowing users to create diagrams from a plain text language.
   ];
 
   programs.emacs = {
