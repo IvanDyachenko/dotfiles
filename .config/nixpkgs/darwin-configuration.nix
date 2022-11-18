@@ -18,14 +18,16 @@
     experimental-features = nix-command flakes
   '';
 
-  nix.trustedUsers = [ "root" "@admin" "@wheel" "ivandyach"];
+  nix.settings.trusted-users = [ "root" "@admin" "@wheel" "ivandyach"];
 
   # You won't be able to install or search for an unfree package as a user,
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
   fonts = {
-    enableFontDir = true;
+    fontDir = {
+      enable = true;
+    };
     fonts = with pkgs; [
       fira-code
       emacs-all-the-icons-fonts
