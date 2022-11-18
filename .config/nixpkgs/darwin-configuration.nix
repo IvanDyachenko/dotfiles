@@ -18,16 +18,30 @@
     experimental-features = nix-command flakes
   '';
 
+  nix.trustedUsers = [ "root" "@admin" "@wheel" "ivandyach"];
+
   # You won't be able to install or search for an unfree package as a user,
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays =
-    [ (import ./overlays/emacs.nix) (import ./overlays/metals.nix) ];
+  fonts = {
+    enableFontDir = true;
+    fonts = with pkgs; [
+      fira-code
+      emacs-all-the-icons-fonts
+    ];
+  };
 
-  users.users.ivandyachenko = {
-    name = "Ivan";
-    home = "/Users/ivandyachenko";
+  nixpkgs.overlays =
+    [
+      (import ./overlays/emacs.nix)
+      (import ./overlays/metals.nix)
+    # (import ./overlays/bloop.nix)
+    ];
+
+  users.users.ivandyach = {
+    name = "ivandyach";
+    home = "/Users/ivandyach";
   };
 
   # Use a custom configuration.nix location.
@@ -51,5 +65,5 @@
   # installed to /etc/profiles by setting:
   home-manager.useUserPackages = true;
 
-  home-manager.users.ivandyachenko = import ./home.nix;
+  home-manager.users.ivandyach = import ./home.nix;
 }

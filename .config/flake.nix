@@ -17,12 +17,12 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Manage a user environment using Nix.
-    home-manager.url = "github:nix-community/home-manager/release-21.05";
+    home-manager.url = "github:nix-community/home-manager/release-22.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { self, nixpkgs, darwin, home-manager, ... }: {
-    darwinConfigurations."MacBook-Pro-Ivan" = darwin.lib.darwinSystem {
+    darwinConfigurations."i110584086" = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       modules = [ ./nixpkgs/darwin-configuration.nix ];
       specialArgs = {

@@ -2,23 +2,24 @@
 self: super: {
   metals = let
     baseName = "metals";
-    version = "0.11.1";
+    version = "0.11.8";
 
     deps = with super;
       stdenv.mkDerivation {
         name = "${baseName}-deps-${version}";
         buildCommand = ''
           export COURSIER_CACHE=$(pwd)
-          ${coursier}/bin/cs fetch org.scalameta:metals_2.12:${version} \
+          ${coursier}/bin/cs fetch org.scalameta:metals_2.13:${version} \
             -r sonatype:snapshots \
-            -r "bintray:scalacenter/releases" \
+            -r bintray:scalameta/maven \
+            -r bintray:scalacenter/releases \
             > deps
           mkdir -p $out/share/java
           cp -n $(< deps) $out/share/java/
         '';
         outputHashMode = "recursive";
         outputHashAlgo = "sha256";
-        outputHash = "sha256-wYIuRTvkPqS4SE5RnkBgmLCwmNv+cYB/iPb9TYip9s0=";
+        outputHash = "sha256-j7je+ZBTIkRfOPpUWbwz4JR06KprMn8sZXONrtI/n8s=";
       };
   in with super;
   stdenv.mkDerivation rec {
@@ -39,13 +40,13 @@ self: super: {
       # expected to declare their supported features in initialization options.
       makeWrapper ${jre}/bin/java $out/bin/metals \
         --prefix PATH : ${lib.makeBinPath [ jdk ]} \
-        --add-flags "-XX:+UseG1GC -XX:+UseStringDeduplication -Xss4m -Xms100m" \
+        --add-flags "-XX:+UseG1GC -XX:+UseStringDeduplication -Xss4m -Xms1024m -Xmx4096m" \
         --add-flags "-cp $CLASSPATH" \
         --add-flags "scala.meta.metals.Main"
 
       makeWrapper ${jre}/bin/java $out/bin/metals-emacs \
         --prefix PATH : ${lib.makeBinPath [ jdk ]} \
-        --add-flags "-XX:+UseG1GC -XX:+UseStringDeduplication -Xss4m -Xms100m -Dmetals.client=emacs" \
+        --add-flags "-XX:+UseG1GC -XX:+UseStringDeduplication -Xss4m -Xms1024m -Xmx4096m -Dmetals.client=emacs" \
         --add-flags "-cp $CLASSPATH" \
         --add-flags "scala.meta.metals.Main"
     '';
