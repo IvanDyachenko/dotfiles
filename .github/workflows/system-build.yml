@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
       # Installs Nix on GitHub Actions.
-      - uses: cachix/install-nix-action@v18
+      - uses: cachix/install-nix-action@v19
         env:
           NIX_VERSION: nix-2.5pre20211026_5667822
         with:
