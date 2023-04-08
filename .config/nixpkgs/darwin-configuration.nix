@@ -18,28 +18,19 @@
     experimental-features = nix-command flakes
   '';
 
-  nix.settings.trusted-users = [ "root" "@admin" "@wheel" "ivandyach"];
+  nix.settings.trusted-users = [ "root" "@admin" "@wheel" "ivandyach" ];
 
   # You won't be able to install or search for an unfree package as a user,
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
   fonts = {
-    fontDir = {
-      enable = true;
-    };
-    fonts = with pkgs; [
-      fira-code
-      emacs-all-the-icons-fonts
-    ];
+    fontDir = { enable = true; };
+    fonts = with pkgs; [ fira-code emacs-all-the-icons-fonts ];
   };
 
   nixpkgs.overlays =
-    [
-      (import ./overlays/emacs.nix)
-      (import ./overlays/metals.nix)
-    # (import ./overlays/bloop.nix)
-    ];
+    [ (import ./overlays/emacs.nix) (import ./overlays/metals.nix) ];
 
   users.users.ivandyach = {
     name = "ivandyach";
