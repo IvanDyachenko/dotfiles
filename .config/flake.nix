@@ -6,8 +6,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Nixpkgs stable channels.
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-21.05";
-    darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-21.05-darwin";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-22.11";
+    darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
 
     # Pure Nix flake utility functions.
     # flake-utils.url = "github:numtide/flake-utils/master";
@@ -17,7 +17,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Manage a user environment using Nix.
-    home-manager.url = "github:nix-community/home-manager/release-22.05";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
