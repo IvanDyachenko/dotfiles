@@ -23,7 +23,7 @@ jobs:
       - name: Recreate and commit changes to the flake's lock file
         run: nix flake update --commit-lock-file .config
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v4.2.0
+        uses: peter-evans/create-pull-request@v5.0.0
         with:
           base: master
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
