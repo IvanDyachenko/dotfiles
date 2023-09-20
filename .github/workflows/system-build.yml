@@ -19,7 +19,7 @@ jobs:
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3.5.2
+      - uses: actions/checkout@v4.0.0
         with:
           fetch-depth: 0
       # Installs Nix on GitHub Actions.
