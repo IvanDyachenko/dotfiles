@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: cachix/install-nix-action@v18
+      - uses: cachix/install-nix-action@v22
         env:
           NIX_VERSION: nix-2.5pre20211026_5667822
         with:
@@ -23,7 +23,7 @@ jobs:
       - name: Recreate and commit changes to the flake's lock file
         run: nix flake update --commit-lock-file .config
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5.0.1
+        uses: peter-evans/create-pull-request@v5.0.2
         with:
           base: master
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>

@@ -9,7 +9,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -57,6 +57,7 @@
     docker-credential-helpers
 
     # A bazel BUILD file formatter and editor.
+    bazel_5
     buildifier
 
     # Scala language server with rich IDE features.
@@ -100,6 +101,11 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsGit;
+    package = pkgs.emacsUnstable;
+  };
+
+  programs.neovim = {
+    enable = true;
+    # package = pkgs.neovim-nightly;
   };
 }

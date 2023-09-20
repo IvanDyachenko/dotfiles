@@ -29,8 +29,11 @@
     fonts = with pkgs; [ fira-code emacs-all-the-icons-fonts ];
   };
 
-  nixpkgs.overlays =
-    [ (import ./overlays/emacs.nix) (import ./overlays/metals.nix) ];
+  nixpkgs.overlays = [
+    (import ./overlays/emacs.nix)
+    (import ./overlays/neovim.nix)
+    (import ./overlays/metals.nix)
+  ];
 
   users.users.ivandyach = {
     name = "ivandyach";
@@ -43,11 +46,16 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  # environment.systemPackages = [ ];
+  environment.systemPackages = [ 
+    pkgs.tmux
+    pkgs.neovim
+  ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.fish.enable = true;
+
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";
+  environment.variables.EDITOR = "nvim";
 
   # By default, Home Manager uses a private pkgs instance that is configured via
   # the home-manager.users.<name>.nixpkgs options. To instead use the global pkgs
