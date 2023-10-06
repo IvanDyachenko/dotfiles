@@ -60,6 +60,9 @@
     bazel_5
     buildifier
 
+    # Pure Scala Artifact Fetching.
+    coursier
+
     # Scala language server with rich IDE features.
     metals
 
@@ -101,7 +104,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacs-unstable;
   };
 
   programs.neovim = {
