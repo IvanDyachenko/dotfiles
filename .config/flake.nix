@@ -6,8 +6,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Nixpkgs stable channels.
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
-    darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.05-darwin";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+    darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
 
     # Pure Nix flake utility functions.
     # flake-utils.url = "github:numtide/flake-utils/master";
