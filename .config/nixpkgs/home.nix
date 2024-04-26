@@ -29,6 +29,9 @@
     # A computer program that retrieves content from web servers.
     wget
 
+    # Command-line tool for interacting with gRPC servers.
+    grpcurl
+
     # List contents of directories in a tree-like format.
     tree
 
@@ -41,24 +44,17 @@
     # Load and unload environment variables depending on the current directory.
     direnv
 
-    # Magnificent app which corrects your previous console command.
-    thefuck
-
     # Universal typing tutor.
-    gtypist
-
-    # PlantUML is an open-source tool allowing users to create diagrams from a plain text language.
-    plantuml
-    plantuml-server
+    # gtypist
 
     # Docker.
-    docker
-    docker-compose
-    docker-credential-helpers
+    # docker
+    # docker-compose
+    # docker-credential-helpers
 
     # A bazel BUILD file formatter and editor.
-    bazel_5
-    buildifier
+    # bazel_5
+    # buildifier
 
     # Pure Scala Artifact Fetching.
     coursier
@@ -71,6 +67,12 @@
 
     # Python
     python3
+
+    # Generic command line non-JVM Apache Kafka producer and consumer.
+    # kcat
+
+    # Redis
+    # redis
   ];
 
   programs.gpg = { enable = true; };
@@ -79,9 +81,9 @@
     enable = true;
 
     userName = "Ivan Dyachenko";
-    userEmail = "ivandyach@yandex-team.ru";
+    userEmail = "inbox@ivandyachenko.ru";
 
-    signing.key = "4A71BB5FD8EB3EAB";
+    signing.key = "136CB6BB34E44255";
     signing.signByDefault = true;
 
     extraConfig = {
@@ -103,8 +105,8 @@
   };
 
   programs.emacs = {
-    enable = true;
-    package = pkgs.emacs-unstable-pgtk;
+    enable = false;
+    package = pkgs.emacs-unstable;
   };
 
   programs.neovim = {

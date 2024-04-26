@@ -10,3 +10,5 @@ fenv source ~/.nix-profile/etc/profile.d/nix.sh
 
 # For direnv to work properly it needs to be hooked into the shell.
 eval (direnv hook fish)
+
+thefuck --alias | source
