@@ -26,8 +26,8 @@
   };
 
   outputs = inputs @ { self, nixpkgs, darwin, home-manager, emacs-overlay, ... }: {
-    darwinConfigurations."i110584086" = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
+    darwinConfigurations."i113976066" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       modules = [ ./nixpkgs/darwin-configuration.nix ];
       specialArgs = {
         inherit home-manager;

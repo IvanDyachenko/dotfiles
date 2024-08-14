@@ -47,14 +47,29 @@
     # Universal typing tutor.
     # gtypist
 
-    # Docker.
-    # docker
-    # docker-compose
-    # docker-credential-helpers
+    # Google's data interchange format.
+    protobuf
 
-    # A bazel BUILD file formatter and editor.
-    # bazel_5
-    # buildifier
+    # Docker is a utility to pack, ship and run any application as a lightweight container.
+    docker
+
+    # Programs to keep Docker login credentials safe by storing in platform keystores.
+    docker-credential-helpers
+
+    # Container runtimes on macOS with minimal setup.
+    colima
+
+    # Bazel is a build system for software development that attempts to create a hermetic build by bootstrapping the toolchain from known sources and binaries.
+    # bazel
+
+    # A user-friendly launcher for Bazel.
+    bazelisk
+
+    # Buildifier is a tool for formatting bazel BUILD and .bzl files with a standard convention.
+    buildifier
+
+    # Buildozer is a command line tool to rewrite multiple Bazel BUILD files using standard commands.
+    buildozer
 
     # Pure Scala Artifact Fetching.
     coursier
@@ -67,6 +82,9 @@
 
     # Python
     python3
+
+    # Event-driven I/O framework for the V8 JavaScript engine.
+    # nodejs_18
 
     # Generic command line non-JVM Apache Kafka producer and consumer.
     # kcat
@@ -83,7 +101,7 @@
     userName = "Ivan Dyachenko";
     userEmail = "inbox@ivandyachenko.ru";
 
-    signing.key = "136CB6BB34E44255";
+    signing.key = "5EECD1816D082829";
     signing.signByDefault = true;
 
     extraConfig = {
@@ -111,6 +129,6 @@
 
   programs.neovim = {
     enable = true;
-    # package = pkgs.neovim-nightly;
+    package = pkgs.neovim-nightly;
   };
 }
