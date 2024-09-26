@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
       # Installs Nix on GitHub Actions.
-      - uses: cachix/install-nix-action@V27
+      - uses: cachix/install-nix-action@v29
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       # Build software only once and put it in a global cache.
