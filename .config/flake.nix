@@ -25,14 +25,15 @@
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, darwin, home-manager, emacs-overlay, ... }: {
-    darwinConfigurations."i113976066" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [ ./nixpkgs/darwin-configuration.nix ];
-      specialArgs = {
-        inherit home-manager;
-        inherit emacs-overlay;
+  outputs =
+    inputs@{ self, nixpkgs, darwin, home-manager, emacs-overlay, ... }: {
+      darwinConfigurations."i113976066" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [ ./nixpkgs/darwin-configuration.nix ];
+        specialArgs = {
+          inherit home-manager;
+          inherit emacs-overlay;
+        };
       };
     };
-  };
 }

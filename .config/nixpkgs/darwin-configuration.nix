@@ -24,12 +24,9 @@
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
-  fonts = {
-    packages = with pkgs; [ fira-code ];
-  };
+  fonts = { packages = with pkgs; [ fira-code ]; };
 
-  nixpkgs.overlays = [
-  ];
+  nixpkgs.overlays = [ ];
 
   users.users.ivandyach = {
     name = "ivandyach";
