@@ -4,6 +4,3 @@
 [submodule ".config/fish/plugins/plugin-foreign-env"]
 	path = .config/fish/plugins/plugin-foreign-env
 	url = https://github.com/oh-my-fish/plugin-foreign-env.git
-[submodule "rose-pin"]
-	path = .config/kitty/themes/rose-pin
-	url = https://github.com/rose-pine/kitty.git
