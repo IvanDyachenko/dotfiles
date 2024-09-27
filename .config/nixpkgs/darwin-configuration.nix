@@ -25,14 +25,10 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts = {
-    fontDir = { enable = true; };
-    fonts = with pkgs; [ fira-code emacs-all-the-icons-fonts ];
+    packages = with pkgs; [ fira-code ];
   };
 
   nixpkgs.overlays = [
-    emacs-overlay.overlay
-    (import ./overlays/neovim.nix)
-    (import ./overlays/metals.nix)
   ];
 
   users.users.ivandyach = {

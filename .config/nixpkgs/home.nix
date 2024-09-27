@@ -23,6 +23,9 @@
     # A simple, fast and user-friendly alternative to 'find'.
     fd
 
+    # ripgrep recursively searches directories for a regex pattern while respecting your gitignore.
+    ripgrep
+
     # jq is a lightweight and flexible command-line JSON processor.
     jq
 
@@ -91,6 +94,9 @@
 
     # Redis
     # redis
+
+    # Java
+    temurin-jre-bin-21
   ];
 
   programs.gpg = { enable = true; };
@@ -122,13 +128,18 @@
     ignores = [ ".DS_Store" ];
   };
 
-  programs.emacs = {
-    enable = false;
-    package = pkgs.emacs-unstable;
+  programs.java = {
+    enable = true;
+    package = pkgs.temurin-jre-bin-21;
   };
 
-  programs.neovim = {
-    enable = true;
-    package = pkgs.neovim-nightly;
-  };
+  # programs.emacs = {
+  #  enable = false;
+  #  package = pkgs.emacs-unstable;
+  # };
+
+  # programs.neovim = {
+  #   enable = true;
+  #   package = pkgs.neovim-nightly;
+  # };
 }
