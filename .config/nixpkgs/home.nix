@@ -65,9 +65,6 @@
     # Google's data interchange format.
     protobuf
 
-    # Java
-    temurin-jre-bin-21
-
     # Bazel is a build system for software development that attempts to create a hermetic build by bootstrapping the toolchain from known sources and binaries.
     # bazel
 
