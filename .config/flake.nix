@@ -19,21 +19,13 @@
     # Manage a user environment using Nix.
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # GNU Emacs
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, darwin, home-manager, emacs-overlay, ... }: {
-      darwinConfigurations."i113976066" = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [ ./nixpkgs/darwin-configuration.nix ];
-        specialArgs = {
-          inherit home-manager;
-          inherit emacs-overlay;
-        };
-      };
+  outputs = inputs@{ self, nixpkgs, darwin, home-manager, ... }: {
+    darwinConfigurations."i113976066" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [ ./nixpkgs/darwin-configuration.nix ];
+      specialArgs = { inherit home-manager; };
     };
+  };
 }

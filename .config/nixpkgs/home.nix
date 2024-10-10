@@ -20,6 +20,9 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    # Universal typing tutor.
+    # gtypist
+
     # A simple, fast and user-friendly alternative to 'find'.
     fd
 
@@ -44,14 +47,8 @@
     # A formatter for Nix code.
     nixfmt
 
-    # Load and unload environment variables depending on the current directory.
-    direnv
-
-    # Universal typing tutor.
-    # gtypist
-
-    # Google's data interchange format.
-    protobuf
+    # An opinionated Lua code formatter.
+    stylua
 
     # Docker is a utility to pack, ship and run any application as a lightweight container.
     docker
@@ -61,6 +58,15 @@
 
     # Container runtimes on macOS with minimal setup.
     colima
+
+    # Load and unload environment variables depending on the current directory.
+    direnv
+
+    # Google's data interchange format.
+    protobuf
+
+    # Java
+    temurin-jre-bin-21
 
     # Bazel is a build system for software development that attempts to create a hermetic build by bootstrapping the toolchain from known sources and binaries.
     # bazel
@@ -86,17 +92,11 @@
     # Python
     python3
 
-    # Event-driven I/O framework for the V8 JavaScript engine.
-    # nodejs_18
-
     # Generic command line non-JVM Apache Kafka producer and consumer.
     # kcat
 
     # Redis
     # redis
-
-    # Java
-    temurin-jre-bin-21
   ];
 
   programs.gpg = { enable = true; };
@@ -133,13 +133,14 @@
     package = pkgs.temurin-jre-bin-21;
   };
 
-  # programs.emacs = {
-  #  enable = false;
-  #  package = pkgs.emacs-unstable;
-  # };
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
 
-  # programs.neovim = {
-  #   enable = true;
-  #   package = pkgs.neovim-nightly;
-  # };
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 }

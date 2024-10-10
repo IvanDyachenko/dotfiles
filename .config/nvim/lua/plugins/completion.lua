@@ -27,7 +27,7 @@ return {
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-vsnip" },
-      { "hrsh7th/vim-vsnip" }
+      { "hrsh7th/vim-vsnip" },
     },
     opts = function()
       local cmp = require("cmp")
@@ -47,11 +47,10 @@ return {
           -- is no vim docs, but you can't have select = true here _unless_ you are
           -- also using the snippet stuff. So keep in mind that if you remove
           -- snippets you need to remove this select
-          ["<CR>"] = cmp.mapping.confirm({ select = true })
-        })
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
       }
       return conf
-    end
-  }
+    end,
+  },
 }
-

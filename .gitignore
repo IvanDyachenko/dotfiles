@@ -11,8 +11,14 @@
 # Nixpkgs configuration files
 !/.config/nixpkgs
 
+# WezTerm configuration files
+!/.config/wezterm
+
 # Fish shell configuration files
 !/.config/fish
+
+# Neovim configuration files
+!/.config/nvim
 
 # Emacs configuration files
 !.emacs.d

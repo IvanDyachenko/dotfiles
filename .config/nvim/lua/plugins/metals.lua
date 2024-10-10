@@ -3,7 +3,6 @@ local map = vim.keymap.set
 
 return {
   "scalameta/nvim-metals",
-  
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
@@ -12,11 +11,9 @@ return {
     },
     {
       "mfussenegger/nvim-dap",
-      
       config = function(self, opts)
         -- Debug settings if you're using nvim-dap
         local dap = require("dap")
-
         dap.configurations.scala = {
           {
             type = "scala",
@@ -24,7 +21,7 @@ return {
             name = "RunOrTest",
             metals = {
               runType = "runOrTestFile",
-              --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
+              -- args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
             },
           },
           {
@@ -36,15 +33,12 @@ return {
             },
           },
         }
-      end
+      end,
     },
   },
-
   ft = { "scala", "sbt", "java" },
-
   opts = function()
     local metals_config = require("metals").bare_config()
-
     -- Example of settings
     metals_config.settings = {
       showImplicitArguments = true,
@@ -142,7 +136,6 @@ return {
 
     return metals_config
   end,
-
   config = function(self, metals_config)
     local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
     vim.api.nvim_create_autocmd("FileType", {
@@ -152,6 +145,5 @@ return {
       end,
       group = nvim_metals_group,
     })
-  end
-
+  end,
 }

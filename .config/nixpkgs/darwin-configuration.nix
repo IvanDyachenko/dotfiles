@@ -1,4 +1,4 @@
-{ config, pkgs, home-manager, emacs-overlay, ... }:
+{ config, pkgs, home-manager, ... }:
 
 {
   imports = [ home-manager.darwinModules.home-manager ];
@@ -39,7 +39,7 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [ pkgs.tmux pkgs.neovim ];
+  environment.systemPackages = [ ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.fish.enable = true;
