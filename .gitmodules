@@ -1,6 +1,3 @@
-[submodule ".emacs.d"]
-	path = .emacs.d
-	url = git@github.com:IvanDyachenko/.emacs.d.git
 [submodule ".config/fish/plugins/plugin-foreign-env"]
 	path = .config/fish/plugins/plugin-foreign-env
 	url = https://github.com/oh-my-fish/plugin-foreign-env.git
