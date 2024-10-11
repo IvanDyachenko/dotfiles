@@ -37,6 +37,7 @@ format = """\
 
 [custom.arc]
 shell = [ "fish", "-N" ]
+ignore_timeout = true
 when = """
 command arc info | grep "^branch:" | string sub -s 9
 test $status -eq 0
