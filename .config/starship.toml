@@ -1,8 +1,43 @@
-format = '$directory${custom.arc}$all'
+format = """\
+  $username\
+  $hostname\
+  $localip\
+  $shlvl\
+  $directory\
+  $vcsh\
+  $fossil_branch\
+  $fossil_metrics\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_metrics\
+  $git_status\
+  $hg_branch\
+  $pijul_channel\
+  ${custom.arc}\
+  $docker_context\
+  $lua\
+  $nix_shell\
+  $memory_usage\
+  $direnv\
+  $env_var\
+  $custom\
+  $sudo\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $battery\
+  $time\
+  $status\
+  $os\
+  $container\
+  $shell\
+  $character\
+"""
 
 [character]
-error_symbol = "[λ](bold red)"
-success_symbol = "[λ](bold green)"
+error_symbol = "[✗](bold red "
+success_symbol = "[➜](bold green)"
 
 [custom.arc]
 shell = [ "fish", "-N" ]

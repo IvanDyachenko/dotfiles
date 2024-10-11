@@ -125,9 +125,7 @@
     ignores = [ ".DS_Store" ];
   };
 
-  programs.starship = {
-    enable = true;
-  };
+  programs.starship = { enable = true; };
 
   programs.java = {
     enable = true;
