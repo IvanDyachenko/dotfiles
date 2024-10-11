@@ -1,1 +1,0 @@
-[[https://github.com/IvanDyachenko/dotfiles/actions/workflows/system-build.yml][https://github.com/IvanDyachenko/dotfiles/actions/workflows/system-build.yml/badge.svg]] [[https://builtwithnix.org][https://img.shields.io/badge/Built_with-Nix-5277C3.svg?logo=nixos&labelColor=73C3D5]]
