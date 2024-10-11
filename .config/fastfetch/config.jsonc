@@ -1,0 +1,16 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/kitty.txt",
+    "type": "auto",
+    "color": {
+      "1": "magenta"
+    }
+  },
+  "modules": [
+    "os",
+    "uptime",
+    "memory",
+    "battery"
+  ]
+}

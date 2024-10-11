@@ -25,3 +25,10 @@ fish_add_path -gP "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin"
 
 # Set up Fish shell to use Starship.
 starship init fish | source
+
+# Display a welcome message in interactive shells.
+function fish_greeting
+	if type -q fastfetch
+		fastfetch
+	end
+end

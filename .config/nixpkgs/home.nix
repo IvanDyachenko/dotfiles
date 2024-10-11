@@ -23,6 +23,12 @@
     # Universal typing tutor.
     # gtypist
 
+    # A system information frontend with an emphasis on performance.
+    # macchina
+
+    # Fastfetch is a neofetch-like tool for fetching system information and displaying it prettily.
+    fastfetch
+
     # A simple, fast and user-friendly alternative to 'find'.
     fd
 
