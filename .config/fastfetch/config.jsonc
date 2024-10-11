@@ -10,7 +10,6 @@
   "modules": [
     "os",
     "uptime",
-    "memory",
-    "battery"
+    "memory"
   ]
 }
