@@ -35,10 +35,6 @@ format = """\
   $character\
 """
 
-[character]
-error_symbol = "[✗](bold red "
-success_symbol = "[➜](bold green)"
-
 [custom.arc]
 shell = [ "fish", "-N" ]
 when = """
