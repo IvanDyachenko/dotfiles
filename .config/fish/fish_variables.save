@@ -1,9 +1,0 @@
-# This file contains fish universal variable definitions.
-# VERSION: 3.0
-SETUVAR __fish_initialized:3400
-SETUVAR fish_key_bindings:fish_default_key_bindings
-
-
-SETUVAR fish_user_paths:/Contents/Home/bin\x1e/Users/ivandyach/yandex\x2dcloud/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/Applications/IntelliJ\x20IDEA\x20CE\x2eapp/Contents/MacOS/\x1e/etc/profiles/per\x2duser/ivandyach/bin/
-
-SETUVAR --export JAVA_HOME:/etc/profiles/per\x2duser/ivandyach/bin/java
