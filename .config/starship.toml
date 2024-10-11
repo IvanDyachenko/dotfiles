@@ -1,0 +1,17 @@
+format = '$directory${custom.arc}$all'
+
+[character]
+error_symbol = "[λ](bold red)"
+success_symbol = "[λ](bold green)"
+
+[custom.arc]
+shell = [ "fish", "-N" ]
+when = """
+command arc info | grep "^branch:" | string sub -s 9
+test $status -eq 0
+"""
+command = """
+command arc info | grep "^branch:" | string sub -s 9
+"""
+symbol = " "
+format = "on [$symbol($output)]($style) "

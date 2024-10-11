@@ -125,6 +125,10 @@
     ignores = [ ".DS_Store" ];
   };
 
+  programs.starship = {
+    enable = true;
+  };
+
   programs.java = {
     enable = true;
     package = pkgs.temurin-jre-bin-21;
