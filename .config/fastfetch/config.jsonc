@@ -4,7 +4,7 @@
     "source": "~/.config/fastfetch/kitty.txt",
     "type": "auto",
     "color": {
-      "1": "magenta"
+      "1": "bright_magenta"
     }
   },
   "modules": [
