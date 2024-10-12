@@ -9,7 +9,18 @@
   },
   "modules": [
     "os",
-    "uptime",
-    "memory"
+    {
+      "type": "cpuusage",
+      "key": "CPU"
+    },
+    {
+      "type": "memory",
+      "key": "RAM"
+    },
+    {
+      "type": "battery",
+      "key": "Battery",
+      "format": "{/4}{-}{/}{4}{?5} [{5}]{?}"
+    }
   ]
 }
