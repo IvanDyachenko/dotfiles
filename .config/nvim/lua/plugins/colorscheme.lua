@@ -4,6 +4,10 @@ return {
     enabled = false,
   },
   {
+    "folke/tokyonight.nvim",
+    enabled = false,
+  },
+  {
     "Mofiqul/dracula.nvim",
     name = "dracula",
     lazy = false,
