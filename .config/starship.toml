@@ -16,7 +16,6 @@ format = """\
   $pijul_channel\
   ${custom.arc}\
   $docker_context\
-  $lua\
   $nix_shell\
   $memory_usage\
   $direnv\
