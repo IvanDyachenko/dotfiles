@@ -95,9 +95,6 @@ local metals = {
 
 local lspconfig = {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-  },
   config = function()
     -- This function gets run when an LSP attaches to a particular buffer.
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -165,16 +162,6 @@ local lspconfig = {
           })
         end
       end,
-    })
-
-    local cmp = require("cmp")
-    cmp.setup({
-      sources = {
-        { name = "nvim_lsp" },
-      },
-      completion = {
-        autocomplete = false,
-      },
     })
 
     -- LSP servers and clients can exchange information about the features they support.

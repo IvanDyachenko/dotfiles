@@ -29,6 +29,7 @@ return {
     dependencies = {
       { "hrsh7th/vim-vsnip" },
       { "hrsh7th/cmp-vsnip" },
+      { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-nvim-lsp" },
     },
     event = "InsertEnter",
@@ -37,6 +38,7 @@ return {
       local conf = {
         sources = {
           { name = "vsnip" },
+          { name = "buffer" },
           { name = "nvim_lsp" },
         },
         snippet = {
@@ -46,10 +48,6 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          -- None of this made sense to me when first looking into this since there
-          -- is no vim docs, but you can't have select = true here _unless_ you are
-          -- also using the snippet stuff. So keep in mind that if you remove
-          -- snippets you need to remove this select
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
       }
