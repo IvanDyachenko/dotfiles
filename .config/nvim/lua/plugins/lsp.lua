@@ -1,14 +1,8 @@
-local fn = vim.fn
-
--- A Metals plugin for Neovim.
 local metals = {
   "scalameta/nvim-metals",
   dependencies = {
-    -- Extensible UI for Neovim notifications and LSP progress messages.
     "j-hui/fidget.nvim",
-    -- All the lua functions I don't want to write twice.
     "nvim-lua/plenary.nvim",
-    -- Debug Adapter Protocol client implementation for Neovim.
     {
       "mfussenegger/nvim-dap",
       config = function(self, opts)
@@ -102,7 +96,6 @@ local metals = {
 local lspconfig = {
   "neovim/nvim-lspconfig",
   dependencies = {
-    -- nvim-cmp source for neovim builtin LSP client.
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
