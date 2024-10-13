@@ -1,9 +1,8 @@
 return {
-  -- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
+  -- It helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
   {
     "folke/which-key.nvim",
     dependencies = {
-      -- Icon provider.
       "echasnovski/mini.icons",
     },
     event = "VeryLazy",
