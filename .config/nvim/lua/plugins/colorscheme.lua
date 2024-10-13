@@ -5,11 +5,4 @@ return {
   init = function()
     vim.cmd.colorscheme("dracula")
   end,
-  config = function()
-    require("dracula").setup({
-      styles = {
-        transparency = true,
-      },
-    })
-  end,
 }
