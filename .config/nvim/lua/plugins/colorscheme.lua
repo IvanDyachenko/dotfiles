@@ -1,21 +1,15 @@
 return {
-  {
-    "catppuccin/nvim",
-    enabled = false,
-  },
-  {
-    "folke/tokyonight.nvim",
-    enabled = false,
-  },
-  {
-    "Mofiqul/dracula.nvim",
-    name = "dracula",
-    lazy = false,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "dracula",
-    },
-  },
+  "Mofiqul/dracula.nvim",
+  name = "dracula",
+  lazy = false,
+  init = function()
+    vim.cmd.colorscheme("dracula")
+  end,
+  config = function()
+    require("dracula").setup({
+      styles = {
+        transparency = true,
+      },
+    })
+  end,
 }
