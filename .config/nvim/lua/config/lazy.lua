@@ -1,11 +1,8 @@
-local map = vim.keymap.set
-local fn = vim.fn
-
 -- Bootstrap lazy.nvim
-local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = fn.system({
+  local out = vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
@@ -19,7 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
       { out, "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
-    fn.getchar()
+    vim.fn.getchar()
     os.exit(1)
   end
 end
