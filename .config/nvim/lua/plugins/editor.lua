@@ -1,15 +1,12 @@
-local fn = vim.fn
-
 return {
   -- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+    dependencies = {
+      -- Icon provider.
+      "echasnovski/mini.icons",
     },
+    event = "VeryLazy",
     keys = {
       {
         "<leader>?",
@@ -20,26 +17,27 @@ return {
       },
     },
   },
+
   -- A completion engine plugin.
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
     dependencies = {
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
+      { "hrsh7th/cmp-vsnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
     },
+    event = "InsertEnter",
     opts = function()
       local cmp = require("cmp")
       local conf = {
         sources = {
-          { name = "nvim_lsp" },
           { name = "vsnip" },
+          { name = "nvim_lsp" },
         },
         snippet = {
           expand = function(args)
-            -- Comes from vsnip
-            fn["vsnip#anonymous"](args.body)
+            -- Comes from vsnip.
+            vim.fn["vsnip#anonymous"](args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
