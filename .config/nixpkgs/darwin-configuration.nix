@@ -24,7 +24,14 @@
   # unless you explicitly enable it:
   nixpkgs.config.allowUnfree = true;
 
-  fonts = { packages = with pkgs; [ fira-code ]; };
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    fira-code
+    fira-code-symbols
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Noto" ]; })
+  ];
 
   nixpkgs.overlays = [ ];
 

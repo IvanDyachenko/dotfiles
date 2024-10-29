@@ -50,6 +50,15 @@
     # Command-line tool for interacting with gRPC servers.
     grpcurl
 
+    # The GNU network utilities suite provides the following tools: ftp(d), hostname, ifconfig, inetd, logger, ping, rcp, rexec(d), rlogin(d), rsh(d), syslogd, talk(d), telnet(d), tftp(d), traceroute, uucpd, and whois.
+    inetutils
+
+    # e2fsprogs is a set of utilities for maintaining the ext2, ext3 and ext4 file systems.
+    e2fsprogs
+
+    # EXT4 implementation for FUSE.
+    ext4fuse
+
     # List contents of directories in a tree-like format.
     tree
 
@@ -97,6 +106,12 @@
 
     # Scala CLI is an experimental tool to run/compile/test Scala that aims at being a better scala command.
     scala-cli
+
+    # rustup installs The Rust Programming Language from the official release channels.
+    rustup
+
+    # rustc is the compiler for the Rust programming language.
+    rustc
 
     # Python
     python3
