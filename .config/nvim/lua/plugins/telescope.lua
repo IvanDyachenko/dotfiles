@@ -12,24 +12,14 @@ return {
       function()
         require("telescope.builtin").find_files({ layout_strategy = "vertical" })
       end,
-      desc = "Find Files (Root Dir)",
+      desc = "[F]ind [F]iles (Root Dir)",
     },
     {
       "<leader>lg",
       function()
         require("telescope.builtin").live_grep({ layout_strategy = "vertical" })
       end,
-      desc = "Grep (Root Dir)",
-    },
-    {
-      "<leader>ss",
-      require("telescope.builtin").lsp_document_symbols,
-      desc = "Goto Symbol",
-    },
-    {
-      "<leader>sS",
-      require("telescope.builtin").lsp_dynamic_workspace_symbols,
-      desc = "Goto Symbol (Workspace)",
+      desc = "[L]ive [G]rep (Root Dir)",
     },
   },
   opts = function()
@@ -38,7 +28,6 @@ return {
     return {
       defaults = {
         file_ignore_patterns = { "target", "out" },
-        prompt_prefix = "❯",
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         mappings = {

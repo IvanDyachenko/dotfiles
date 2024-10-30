@@ -14,7 +14,15 @@ return {
           )
         end
 
-        map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+        map("K", vim.lsp.buf.hover, "Hover Documentation")
+
+        map("gD", vim.lsp.buf.definition, "[G]oto [D]efinition")
+
+        map(
+          "<leader>gtD",
+          require("telescope.builtin").lsp_type_definitions,
+          "[G]oto [T]ype [D]efinition"
+        )
 
         map(
           "gr",
@@ -23,36 +31,49 @@ return {
         )
 
         map(
-          "gI",
+          "gi",
           require("telescope.builtin").lsp_implementations,
           "[G]oto [I]mplementation"
         )
 
         map(
-          "<leader>D",
-          require("telescope.builtin").lsp_type_definitions,
-          "Type [D]efinition"
-        )
-
-        map(
-          "<leader>ds",
+          "<leader>gds",
           require("telescope.builtin").lsp_document_symbols,
-          "[D]ocument [S]ymbols"
+          "[G]oto [D]ocument [S]ymbols"
         )
 
         map(
-          "<leader>ws",
+          "<leader>gws",
           require("telescope.builtin").lsp_dynamic_workspace_symbols,
-          "[W]orkspace [S]ymbols"
+          "[G]oto [W]orkspace [S]ymbols"
         )
 
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-        map("K", vim.lsp.buf.hover, "Hover Documentation")
+        map("<leader>sh", vim.lsp.buf.signature_help, "[S]ignature [H]elp")
 
-        map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map(
+          "<leader>awf",
+          vim.lsp.buf.add_workspace_folder,
+          "[A]dd [W]orkspace [F]older"
+        )
+
+        map("<leader>h", function()
+          if client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+          else
+            vim.notify(
+              "Server is not an inlayhint provider",
+              vim.log.levels.ERROR
+            )
+          end
+        end, "Inlay [Hint]")
+
+        map("<leader>o", function()
+          vim.lsp.buf.format({ async = true })
+        end, "F[o]rmat")
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
