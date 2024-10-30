@@ -60,8 +60,14 @@ return {
           "[A]dd [W]orkspace [F]older"
         )
 
+        map("<leader>o", function()
+          vim.lsp.buf.format({ async = true })
+        end, "F[o]rmat")
+
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+
         map("<leader>h", function()
-          if client.server_capabilities.inlayHintProvider then
+          if client and client.server_capabilities.inlayHintProvider then
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
           else
             vim.notify(
@@ -71,11 +77,6 @@ return {
           end
         end, "Inlay [Hint]")
 
-        map("<leader>o", function()
-          vim.lsp.buf.format({ async = true })
-        end, "F[o]rmat")
-
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
           vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             buffer = event.buf,
