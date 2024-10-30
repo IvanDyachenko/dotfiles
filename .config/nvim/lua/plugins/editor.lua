@@ -18,10 +18,10 @@ return {
   },
 
   -- It uses virtual text and gutter signs to show you motions that are available to you and where they would take you.
-  {
-    "tris203/precognition.nvim",
-    opts = {},
-  },
+  -- {
+  --   "tris203/precognition.nvim",
+  --   opts = {},
+  -- },
 
   -- A completion engine plugin.
   {

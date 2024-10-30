@@ -48,6 +48,7 @@ return {
       "nix",
       "proto",
       "regex",
+      "ron",
       "rust",
       "scala",
       "sql",
