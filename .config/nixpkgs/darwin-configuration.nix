@@ -11,7 +11,7 @@
   services.nix-daemon.enable = true;
 
   # Install the flakes edition.
-  nix.package = pkgs.nixFlakes;
+  nix.package = pkgs.nixVersions.stable;
 
   # Enable the nix 2.0 CLI and flakes support feature-flags.
   nix.extraOptions = ''
@@ -25,11 +25,12 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
+    # fire
+    # fira-code
+    # fira-code-symbols
     noto-fonts
-    noto-fonts-cjk
     noto-fonts-emoji
-    fira-code
-    fira-code-symbols
+    noto-fonts-extra
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Noto" ]; })
   ];
 
@@ -48,11 +49,11 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ ];
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.fish.enable = true;
-
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";
   environment.variables.EDITOR = "nvim";
+
+  # Create /etc/bashrc that loads the nix-darwin environment.
+  programs.fish.enable = true;
 
   # By default, Home Manager uses a private pkgs instance that is configured via
   # the home-manager.users.<name>.nixpkgs options. To instead use the global pkgs
@@ -64,4 +65,10 @@
   home-manager.useUserPackages = true;
 
   home-manager.users.ivandyach = import ./home.nix;
+
+  homebrew = {
+    enable = true;
+    taps = [ ];
+    casks = [ ];
+  };
 }

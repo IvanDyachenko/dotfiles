@@ -20,6 +20,12 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    # The cli subcommand interacts with a running wezterm GUI or multiplexer instance, and can be used to spawn programs and manipulate tabs and panes.
+    wezterm
+
+    # Blazing fast terminal file manager written in Rust, based on async I/O.
+    yazi
+
     # Universal typing tutor.
     # gtypist
 
@@ -121,6 +127,9 @@
 
     # Redis
     # redis
+
+    # Helix IDE
+    helix
   ];
 
   programs.gpg = { enable = true; };

@@ -17,6 +17,18 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
 
+-- Fonts
+config.font = wezterm.font_with_fallback({
+  "JetBrainsMono Nerd Font",
+  "JetBrainsMono Nerd Font Mono",
+  "FiraCode Nerd Font Mono",
+  "NotoMono Nerd Font",
+  "NotoMono Nerd Font Mono",
+  "Fira Code Symbol",
+  "Noto Sans Symbol",
+  "PingFang SC",
+})
+
 -- Cursor
 config.default_cursor_style = "BlinkingBlock"
 
