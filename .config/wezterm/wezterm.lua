@@ -49,17 +49,17 @@ config.keys = {
     action = wezterm.action.SpawnCommandInNewTab({ cwd = wezterm.home_dir }),
   },
   {
-    key = "w",
+    key = "q",
     mods = "CTRL|SHIFT",
     action = wezterm.action.CloseCurrentPane({ confirm = false }),
   },
   {
-    key = "|",
+    key = "v",
     mods = "CTRL|SHIFT",
     action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
   },
   {
-    key = "_",
+    key = "s",
     mods = "CTRL|SHIFT",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
