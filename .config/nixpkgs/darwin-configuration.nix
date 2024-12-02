@@ -31,7 +31,10 @@
     noto-fonts
     noto-fonts-emoji
     noto-fonts-extra
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Noto" ]; })
+    nerd-fonts.noto
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   nixpkgs.overlays = [ ];

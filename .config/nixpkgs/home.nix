@@ -24,7 +24,7 @@
     wezterm
 
     # Blazing fast terminal file manager written in Rust, based on async I/O.
-    yazi
+    # yazi
 
     # Universal typing tutor.
     # gtypist
@@ -118,6 +118,9 @@
 
     # rustc is the compiler for the Rust programming language.
     rustc
+
+    # CLI tool for on-chip debugging and flashing of ARM chips.
+    probe-rs
 
     # Python
     python3
