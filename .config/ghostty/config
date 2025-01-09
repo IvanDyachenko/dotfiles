@@ -1,0 +1,4 @@
+cursor-click-to-move = true
+
+theme = dark:dracula+,light:dracula
+font-family = JetBrainsMono Nerd Font
