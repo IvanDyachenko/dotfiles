@@ -1,4 +1,16 @@
+# Whether to automatically copy selected text to the clipboard.
+# `true` will prefer to copy to the selection clipboard if supported by the OS, otherwise it will copy to the system clipboard.
+copy-on-select = true
+
+# Shell integration features to enable if shell integration itself is enabled.
+shell-integration-features = true
+
+# If `true`, when there are multiple split panes, the mouse selects the pane that is focused. 
+focus-follows-mouse = true
+
+# Enables the ability to move the cursor at prompts by using alt+click on Linux and option+click on macOS.
 cursor-click-to-move = true
 
 theme = dark:dracula+,light:dracula
+
 font-family = JetBrainsMono Nerd Font
