@@ -1,6 +1,7 @@
 # Whether to automatically copy selected text to the clipboard.
 # `true` will prefer to copy to the selection clipboard if supported by the OS, otherwise it will copy to the system clipboard.
-copy-on-select = true
+# The value `clipboard` will always copy text to the selection clipboard as well as the system clipboard.
+copy-on-select = clipboard
 
 # Shell integration features to enable if shell integration itself is enabled.
 shell-integration-features = true
