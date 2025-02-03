@@ -9,12 +9,19 @@ after-delay.enable = true
 hidden = false
 
 [editor]
+# Renders a line at the top of the editor displaying open buffers.
+bufferline = "always"
+
 # Minimum severity to show a diagnostic after the end of a line:
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
+
+[editor.soft-wrap]
+enable = true
 
 [editor.inline-diagnostics]
 # Minimum severity to show a diagnostic on the primary cursor's line.
 # Note that `cursor-line` diagnostics are hidden in insert mode.
-cursor-line = "error"
+cursor-line = "warning"
+
 # Minimum severity to show a diagnostic on other lines:
-other-lines = "error"
+# other-lines = "error"
